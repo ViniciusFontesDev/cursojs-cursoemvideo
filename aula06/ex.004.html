@@ -17,7 +17,10 @@
         document.write(`Olá ${nome}. Seu nome em minúsculas é ${nome.toLowerCase()}.<br>`)
 
         var n1 = window.prompt('Digite um número:')
-        document.write(`O número é ${n1.replace('0', '1')}`)
+        document.write(`O número é ${n1.replace('0', '1')}<br/>`)
+
+        var n2 = window.prompt('Escreva um valor:')
+        document.write(`O valor é ${n2.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}`)
 
     </script>
 </body>
