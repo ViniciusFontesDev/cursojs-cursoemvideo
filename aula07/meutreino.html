@@ -4,10 +4,101 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Treinando operadores</title>
+    <style>
+        body, html{
+            margin: 0px;
+            padding: 0px;
+            background-color: lightblue;
+        }
+        h1{
+            text-align: center;
+            color: yellow;
+        }
+        h2{
+            text-align: center;
+        }
+        h3{
+            padding-left: 25px;
+        }
+        input{
+            border: none;
+            box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.404);
+        }
+        input.esquerda{
+            margin-left: 40px;
+        }
+        input.result{
+            text-align: center;
+            margin-left: 190px;
+            margin-top: 5px;
+        }
+        div{
+            margin: 0px 0px 30px 30px;
+        }
+        hr{
+            border: 1px solid yellow;
+            box-shadow: 6px 1px 4px black;
+        }
+    </style>
 </head>
 <body>
-
+    <h1>How I Met Your Mother</h1>
+    <h2>Calculadora sem gracinha</h2>
+        <h3>Multiplicação</h3>
+    <input type="number" name="txtn1" id="txtn1" class="esquerda"> *
+    <input type="number" name="txtn2" id="txtn2">
+    <br/>
+    <input type="button" value="Multiplicar" class="result" onclick="multiplicar()">
+    <div id="res1">Resultado</div>
+    <hr>
+    
+    
+    
+    <h3>Divisão</h3>
+    <input type="number" name="txtn3" id="txtn3" class="esquerda">
+    /
+    <input type="number" name="txtn4" id="txtn4">
+    <br/>
+    <input type="button" value="Dividir" class="result">
+    <div>Resultado</div>
+    <hr>
+    
+    
+    
+    <h3>Soma</h3>
+    <input type="number" name="txtn5" id="txtn5" class="esquerda">
+    +
+    <input type="number" name="txtn6" id="txtn6">
+    <br/>
+    <input type="button" value="Somar" class="result">
+    <div>Resultado</div>
+    <hr>
+    
+    
+    
+    
+    
+    <h3>Subtração</h3>
+    <input type="number" name="txtn7" id="txtn7" class="esquerda">
+    -
+    <input type="number" name="txtn8" id="txtn8">
+    <br/>
+    <input type="button" value="Subtrair" class="result">
+    <div>Resultado</div>
+    <hr>
+    
     <script>
+        function multiplicar(){
+            var n1 = window.document.querySelector('input#txtn1')
+            var n2 = window.document.getElementById('txtn2')
+            var res = window.document.getElementById('res1')
+            var n1 = Number(n1.value)
+            var n2 = Number(n2.value)
+            var s = n1 * n2
+            res1.innerHTML = `A multiplicação entre ${n1} e ${n2} é igual a <strong>${s}</strong>`
+        }
+
+        
         
     </script>
     
