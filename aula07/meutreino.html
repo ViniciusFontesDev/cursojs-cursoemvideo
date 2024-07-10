@@ -32,6 +32,7 @@
             text-align: center;
             margin-left: 100px;
             margin-top: 5px;
+            background-color: rgb(231, 229, 229);
         }
         div{
             margin: 0px 0px 30px 30px;
@@ -50,7 +51,7 @@
         <input type="number" name="txtn1" id="txtn1" class="esquerda"> *
         <input type="number" name="txtn2" id="txtn2">
         <br/>
-        <input type="button" value="Multiplicar" class="result" onclick="multiplicar()">
+        <input type="button" value="Multiplicar" id="result0" class="result" onclick="multiplicar()" onmouseenter="entrarmulti()" onmouseleave="sairmulti()">
         <div id="res1">Resultado</div>
         <hr>
         
@@ -59,7 +60,7 @@
         /
         <input type="number" name="txtn4" id="txtn4">
         <br/>
-        <input type="button" value="Dividir" class="result" onclick="dividir()">
+        <input type="button" value="Dividir" id="result1" class="result" onclick="dividir()" onmouseenter="entrardivi()" onmouseleave="sairdivi()">
         <div id="resdiv">Resultado</div>
         <hr>
         
@@ -68,7 +69,7 @@
         +
         <input type="number" name="txtn6" id="txtn6">
         <br/>
-        <input type="button" value="Somar" class="result" onclick="somar()">
+        <input type="button" value="Somar" id="result2" class="result" onclick="somar()" onmouseenter="entrarsoma()" onmouseleave="sairsoma()">
         <div id="ressoma">Resultado</div>
         <hr>
 
@@ -77,7 +78,7 @@
         -
         <input type="number" name="txtn8" id="txtn8">
         <br/>
-        <input type="button" value="Subtrair" class="result" onclick="subtrair()">
+        <input type="button" value="Subtrair" id="result3" class="result" onclick="subtrair()" onmouseenter="entrarsub()" onmouseleave="sairsub()">
         <div id="ressub">Resultado</div>
         <hr>
 
@@ -85,18 +86,18 @@
         <input type="number" name="txtn9" id="txtn9" class="esquerda">%
         <input type="number" name="txtn10" id="txtn10">
         <br/>
-        <input type="button" value="Calcular Resto" class="result" onclick="restar()">
+        <input type="button" value="Calcular Resto" id="result4" class="result" onclick="restar()" onmouseenter="entrarresto()" onmouseleave="sairresto()">
         <div id="resresto">Resultado</div>
         <hr>
 
-        <h3>Calculando média</h3>
-    <input type="number" name="nota1" id="nota1" value="nota 1" class="esquerda">
-    <input type="number" name="nota2" id="nota2">
-    <input type="number" name="nota3" id="nota3">
-    <br/>
-    <input type="button" value="Calcular" class="result" onclick="media()" onmouseenter="entrou()">
-    <div id="resmedia">Resultado</div>
-    <hr>
+            <h3>Calculando média</h3>
+        <input type="number" name="nota1" id="nota1" class="esquerda">
+        <input type="number" name="nota2" id="nota2">
+        <input type="number" name="nota3" id="nota3">
+        <br/>
+        <input type="button" value="Calcular" id="result5" class="result" onclick="media()" onmouseenter="entrarmedia()" onmouseleave="sairmedia()">
+        <div id="resmedia">Resultado</div>
+        <hr>
 
     </main>
     
@@ -160,15 +161,63 @@
             var not2 = Number(not2.value)
             var not3 = Number(not3.value)
             var s = (not1 + not2 + not3) / 3
-            resmedia.innerHTML = `A média entre a nota ${not1}, nota ${not2} e nota ${not3} é igual a ${s}`
+            resmedia.innerHTML = `A média entre a nota ${not1}, nota ${not2} e nota ${not3} é igual a <strong>${s}</strong>`
         }
 
-        function entrou(){
-            var entrou = window.document.querySelector('input.result')
-            entrou.style.backgroundcolor = 'blue'
+        function entrarmulti(){
+            var entrar = window.document.getElementById('result0')
+            entrar.style.background = 'lightyellow'
         }
+        function entrardivi(){
+            var entrar = window.document.getElementById('result1')
+            entrar.style.background = 'lightyellow'
+        }
+        function entrarsoma(){
+            var entrar = window.document.getElementById('result2')
+            entrar.style.background = 'lightyellow'
+        }
+        function entrarsub(){
+            var entrar = window.document.getElementById('result3')
+            entrar.style.background = 'lightyellow'
+        }
+        function entrarresto(){
+            var entrar = window.document.getElementById('result4')
+            entrar.style.background = 'lightyellow'
+        }
+        function entrarmedia(){
+            var entrar = window.document.getElementById('result5')
+            entrar.style.background = 'lightyellow'
+        }
+
+        function sairmulti(){
+            var sair = window.document.getElementById('result0')
+            sair.style.background = 'rgb(231, 229, 229)'
+        }
+        function sairdivi(){
+            var sair = window.document.getElementById('result1')
+            sair.style.background = 'rgb(231, 229, 229)'
+        }
+        function sairsoma(){
+            var sair = window.document.getElementById('result2')
+            sair.style.background = 'rgb(231, 229, 229)'
+        }
+        function sairsub(){
+            var sair = window.document.getElementById('result3')
+            sair.style.background = 'rgb(231, 229, 229)'
+        }
+        function sairresto(){
+            var sair = window.document.getElementById('result4')
+            sair.style.background = 'rgb(231, 229, 229)'
+        }
+        function sairmedia(){
+            var sair = window.document.getElementById('result5')
+            sair.style.background = 'rgb(231, 229, 229)'
+        }
+
+
         
-    </script>
+        
+        </script>
     
 </body>
 </html>
