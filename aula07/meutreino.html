@@ -23,13 +23,14 @@
         input{
             border: none;
             box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.404);
+            width: 100px;
         }
         input.esquerda{
             margin-left: 40px;
         }
         input.result{
             text-align: center;
-            margin-left: 190px;
+            margin-left: 100px;
             margin-top: 5px;
         }
         div{
@@ -42,50 +43,62 @@
     </style>
 </head>
 <body>
-    <h1>How I Met Your Mother</h1>
-    <h2>Calculadora sem gracinha</h2>
-        <h3>Multiplicação</h3>
-    <input type="number" name="txtn1" id="txtn1" class="esquerda"> *
-    <input type="number" name="txtn2" id="txtn2">
+    <main>
+        <h1>How I Met Your Mother</h1>
+        <h2>Calculadora sem gracinha</h2>
+            <h3>Multiplicação</h3>
+        <input type="number" name="txtn1" id="txtn1" class="esquerda"> *
+        <input type="number" name="txtn2" id="txtn2">
+        <br/>
+        <input type="button" value="Multiplicar" class="result" onclick="multiplicar()">
+        <div id="res1">Resultado</div>
+        <hr>
+        
+            <h3>Divisão</h3>
+        <input type="number" name="txtn3" id="txtn3" class="esquerda">
+        /
+        <input type="number" name="txtn4" id="txtn4">
+        <br/>
+        <input type="button" value="Dividir" class="result" onclick="dividir()">
+        <div id="resdiv">Resultado</div>
+        <hr>
+        
+            <h3>Soma</h3>
+        <input type="number" name="txtn5" id="txtn5" class="esquerda">
+        +
+        <input type="number" name="txtn6" id="txtn6">
+        <br/>
+        <input type="button" value="Somar" class="result" onclick="somar()">
+        <div id="ressoma">Resultado</div>
+        <hr>
+
+            <h3>Subtração</h3>
+        <input type="number" name="txtn7" id="txtn7" class="esquerda">
+        -
+        <input type="number" name="txtn8" id="txtn8">
+        <br/>
+        <input type="button" value="Subtrair" class="result" onclick="subtrair()">
+        <div id="ressub">Resultado</div>
+        <hr>
+
+            <h3>Resto da divisão</h3>
+        <input type="number" name="txtn9" id="txtn9" class="esquerda">%
+        <input type="number" name="txtn10" id="txtn10">
+        <br/>
+        <input type="button" value="Calcular Resto" class="result" onclick="restar()">
+        <div id="resresto">Resultado</div>
+        <hr>
+
+        <h3>Calculando média</h3>
+    <input type="number" name="nota1" id="nota1" value="nota 1" class="esquerda">
+    <input type="number" name="nota2" id="nota2">
+    <input type="number" name="nota3" id="nota3">
     <br/>
-    <input type="button" value="Multiplicar" class="result" onclick="multiplicar()">
-    <div id="res1">Resultado</div>
+    <input type="button" value="Calcular" class="result" onclick="media()" onmouseenter="entrou()">
+    <div id="resmedia">Resultado</div>
     <hr>
-    
-    
-    
-    <h3>Divisão</h3>
-    <input type="number" name="txtn3" id="txtn3" class="esquerda">
-    /
-    <input type="number" name="txtn4" id="txtn4">
-    <br/>
-    <input type="button" value="Dividir" class="result">
-    <div>Resultado</div>
-    <hr>
-    
-    
-    
-    <h3>Soma</h3>
-    <input type="number" name="txtn5" id="txtn5" class="esquerda">
-    +
-    <input type="number" name="txtn6" id="txtn6">
-    <br/>
-    <input type="button" value="Somar" class="result">
-    <div>Resultado</div>
-    <hr>
-    
-    
-    
-    
-    
-    <h3>Subtração</h3>
-    <input type="number" name="txtn7" id="txtn7" class="esquerda">
-    -
-    <input type="number" name="txtn8" id="txtn8">
-    <br/>
-    <input type="button" value="Subtrair" class="result">
-    <div>Resultado</div>
-    <hr>
+
+    </main>
     
     <script>
         function multiplicar(){
@@ -98,7 +111,62 @@
             res1.innerHTML = `A multiplicação entre ${n1} e ${n2} é igual a <strong>${s}</strong>`
         }
 
-        
+        function dividir(){
+            var n3 = window.document.querySelector('input#txtn3')
+            var n4 = window.document.getElementById('txtn4')
+            var res = window.document.getElementById('resdiv')
+            var n3 = Number(n3.value)
+            var n4 = Number(n4.value)
+            var s = n3 / n4
+            resdiv.innerHTML = `A divisão entre ${n3} e ${n4} é igual a <strong>${s}</strong>`
+        }
+
+        function somar(){
+            var n5 = window.document.getElementById('txtn5')
+            var n6 = window.document.querySelector('input#txtn6')
+            var res = window.document.getElementById('ressoma')
+            var n5 = Number(n5.value)
+            var n6 = Number(n6.value)
+            var s = n5 + n6
+            ressoma.innerHTML = `A soma entre ${n5} e ${n6} é igual a <strong>${s}</strong>`
+        }
+
+        function subtrair(){
+            var n7 = window.document.querySelector('input#txtn7')
+            var n8 = window.document.querySelector('input#txtn8')
+            var res = window.document.getElementById('ressub')
+            var n7 = Number(n7.value)
+            var n8 = Number(n8.value)
+            var s = n7 - n8
+            ressub.innerHTML = `A subtração entre ${n7} e ${n8} é igual a <strong>${s}</strong>`
+        }
+
+        function restar(){
+            var n9 = window.document.getElementById('txtn9')
+            var n10 = window.document.querySelector('input#txtn10')
+            var res = window.document.getElementById('resresto')
+            var n9 = Number(n9.value)
+            var n10 = Number(n10.value)
+            var s = n9 % n10
+            resresto.innerHTML = `O resto da divisão entre ${n9} e ${n10} é igual a <strong>${s}</strong>`            
+        }
+
+        function media(){
+            var not1 = window.document.getElementById('nota1')
+            var not2 = window.document.getElementById('nota2')
+            var not3 = window.document.getElementById('nota3')
+            var res = window.document.getElementById('resmedia')
+            var not1 = Number(not1.value)
+            var not2 = Number(not2.value)
+            var not3 = Number(not3.value)
+            var s = (not1 + not2 + not3) / 3
+            resmedia.innerHTML = `A média entre a nota ${not1}, nota ${not2} e nota ${not3} é igual a ${s}`
+        }
+
+        function entrou(){
+            var entrou = window.document.querySelector('input.result')
+            entrou.style.backgroundcolor = 'blue'
+        }
         
     </script>
     
