@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 body{
-    background-color: rgba(0, 102, 255, 0.468);
+    background-color: aliceblue;
     font:normal 15pt Arial;
 }
 
@@ -23,4 +23,16 @@ footer{
     color: white;
     text-align: center;
     font-style: italic;
+}
+
+img{
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+}
+
+div{
+    text-align: center;
+    padding: 7px;
+    font-weight: bolder;
 }
