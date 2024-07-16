@@ -28,3 +28,7 @@ footer{
 input{
     margin: 20px 0px;
 }
+
+select{
+    width: 250px;
+}
