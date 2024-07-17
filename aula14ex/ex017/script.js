@@ -1,11 +1,19 @@
 function gerarTabuada(){
     var n = window.document.getElementById('numero')
-    var n = Number(n.value)
-    var res = window.document.getElementById('res')
+    var t = window.document.getElementById('itabuada')
 
-    for(c = 0; c <= 10; c++)
-        res.innerHTML = `${c}`
-        res.innerHTML = `${c}`
-        res.innerHTML = `${c}`
-        res.innerHTML = `${c}`
+    if(n.value.length == 0){
+        window.alert('Por favor, digite um número!')
+    }else {
+        var n = Number(n.value)
+        var c = 1
+        t.innerHTML = ''
+        while (c <= 10){
+            var item = document.createElement('option')
+            item.text = `${n} x ${c} = ${n*c}`
+            item.value = `t${c}`
+            t.appendChild(item)
+            c++
+        }
+    }
 }
