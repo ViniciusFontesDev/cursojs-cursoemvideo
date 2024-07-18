@@ -1,0 +1,42 @@
+@charset "UTF-8";
+
+body{
+    background-color: rgba(0, 102, 255, 0.468);
+    font:normal 15pt Arial;
+}
+
+header{
+    color: white;
+    text-align: center;
+}
+
+option{
+    width: 200px;
+    padding-top: 3px;
+    padding-left: 5px;
+}
+
+option#unicaoption{
+    background-color: lightgray;
+    text-align: center;
+    padding: 1px;
+}
+
+select{
+    margin: 20px 0px;
+}
+
+section{
+    background-color: white;
+    border-radius: 5px;
+    padding: 15px;
+    max-width: 500px;
+    margin: auto;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.501);
+}
+
+footer{
+    color: white;
+    text-align: center;
+    font-style: italic;
+}
